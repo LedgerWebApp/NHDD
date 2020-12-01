@@ -1,0 +1,27 @@
+.upd__prof{
+  width: 75%;
+  height: 80vh;
+}
+input{
+  width: 50%;
+  height: 6vh;
+  margin-left: 24%;
+}
+.upd__head{
+  font-size: 35px;
+  font-family: "montserrat";
+  text-align: center;
+  color: white;
+}
+.BUTTON_KMY{
+  margin-left: 42%;
+  margin-top: 3%;
+  background-color: white;
+  color: blue;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+.BUTTON_KMY:hover{
+  background-color: blue;
+  color: white;
+  border: none;
+}

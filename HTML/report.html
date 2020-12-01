@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/report.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
+    <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>NHDD | Dashboard </title>
+    <header>
+        <div class="logo__name"><h1>NHDD</h1></div>
+    </header>
+</head>
+<body>
+    <div class="loader__bg">
+    <div class="loader"></div>
+    </div>
+    <section id="add__expense">
+        <div class = "user__panel">
+        <img class="user__img" src ="bg.jpg" alt="bg image">
+        <h1 class="user__name"> Username </h1>
+        <hr>
+        <button onclick="ExpenseDropdown()"class="panel__item first__item"><i class="fas fa-dollar-sign adjust__size"></i>Expenses</button>
+        <div id="dropdown" class="expense__content">
+            <a href="#home">Add expenses</a>
+            <a href="#about">Manage expenses</a>
+        </div>
+        <button onclick="ExpenseReportDropdown()" class="panel__item first__item call__drop"><i class="fas fa-dollar-sign adjust__size"></i>Expense Report</button>
+        <div id="dropdown_er" class="expense_report__content">
+            <a href="#home">Daywise expenses</a>
+            <a href="#about">Monthwise expenses</a>
+        </div>
+        <button class="panel__item first__item"><i class='fas fa-home adjust__size'></i>Log out</h1></button>
+        </div>
+        <div class ="user__inputarea">
+         <hr />
+        <div class="graph__holder">
+        <div class="bar__chart__container">
+            <canvas id="myChart"></canvas>
+        </div>
+        <div class="pie__chart__container">
+            <canvas id="mypiechart"></canvas>
+        </div>
+        <div class="line__chart__container">
+            <canvas id="mylinechart"></canvas>
+        </div>
+        <div class="credit__display">
+            <h1 class="credit__score">XXX</h1>
+            <img src="../Images/credit_bg.jpeg">
+            
+        </div>
+         </div>
+    </section>
+    <script src="../Script/report.js"></script>
+    
+</body>
+</html>

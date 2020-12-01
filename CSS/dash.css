@@ -1,0 +1,84 @@
+body
+{
+	
+	background-image:url('../Images/background.jpg');
+	font-family: 'Poppins';
+	height:600px;
+}
+.logo_name {
+    font-size: 2em;
+    color: white;
+}
+
+ul.ho {
+    float: right;
+}
+ul.ho>li {
+    float: left;
+    margin-right: 2em;
+    text-transform: uppercase;
+}
+
+
+.second
+{
+	
+	background-color:#bfefff;
+	margin-right:4px;
+	margin-left:4px;
+}
+.collapsible {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  padding: 8px;
+  width: 200px;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+.active, .collapsible:hover {
+  background-color: white;
+}
+.content {
+  padding: 0 8px;
+  display: none;
+  overflow: hidden;
+  background-color: white;
+}
+.collapsible:after {
+  content: '\02795'; /* Unicode character for "plus" sign (+) */
+  font-size: 13px;
+  color: white;
+  float: right;
+  margin-left: 5px;
+	position: relative;top:-38px;
+
+}
+.active:after {
+  content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
+.border {
+  
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.border td  {
+  border: 1.1px solid #ddd;
+  padding: 7px;
+}
+.border td  {
+  border: 1.1px solid #ddd;
+  padding: 7px;
+}
+
+.border th {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: left;
+  background-color: green;
+  color: white;
+}

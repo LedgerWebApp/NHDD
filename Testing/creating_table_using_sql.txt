@@ -1,0 +1,39 @@
+First we will have local server for the PHP file to run.
+Then we will first create a database name NHDD as it is local server so the username remains root and password is NULL
+
+Then we will write the following command in sql which we have open using xampp
+
+CREATE TABLE `expenses` (
+  `id` int(11) NOT NULL,
+  `user` varchar(120) DEFAULT NULL,
+  `name` varchar(120) DEFAULT NULL,
+  `type` varchar(200) DEFAULT NULL,
+`date` date DEFAULT NULL,
+  `cost` varchar(250) DEFAULT NULL,
+  `RegDate` timestamp NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+CREATE TABLE `signupid` (
+  `id` int(11) NOT NULL,
+  `Name` varchar(120) DEFAULT NULL,
+  `Username` varchar(120) DEFAULT NULL,
+  `Email` varchar(200) DEFAULT NULL,
+  `Password` varchar(250) DEFAULT NULL,
+  `expenses` int(128) NOT NULL,
+  `income` int(128) NOT NULL,
+  `firstname` varchar(128) NOT NULL,
+  `lastname` varchar(128) NOT NULL,
+  `RegDate` timestamp NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+CREATE TABLE `images` (
+  `time` date DEFAULT NULL,
+  `username` varchar(120) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `name` varchar(120) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `id` int(11) NOT NULL,
+  `image` longblob NOT NULL,
+  `uploaded` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+Then you have the database setup now you can open signup page to do the signup.......

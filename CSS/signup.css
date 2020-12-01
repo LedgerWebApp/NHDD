@@ -1,0 +1,84 @@
+body
+{
+	background-image:url('../Images/background.jpg');
+	font-family: 'Poppins';
+}
+ul.ho {
+    float: right;
+}
+ul.ho>li {
+    float: left;
+    margin-right: 2em;
+    text-transform: uppercase;
+}
+
+.logo_name {
+    font-size: 2em;
+    color: white;
+}
+
+.first
+{
+	
+	height:594px;
+	width:480px;
+	background-image:url('../Images/half background.jpg');
+border-radius: 24px 0px 0px 24px;
+
+}
+.second
+{
+        height:594px;
+	width:520px;
+	background-color: black;
+border-radius: 0px 24px 24px 0px;
+}
+.contain
+{
+width:340px;
+height:134px;
+}
+{box-sizing: border-box}
+.in{
+  display: flex;
+  width: 100%;
+  margin-bottom: 15px;
+}
+.icon {
+  padding: 10px;
+  background: green;
+  color: white;
+  min-width: 50px;
+  text-align: center;
+}
+.field {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+}
+
+
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 14px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 90%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:1.2;
+}
+.signup
+{
+width:50%
+}

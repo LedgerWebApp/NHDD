@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/add.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <title>NHDD | Add expenses </title>
+    <header>
+        <div class="logo__name"><h1>NHDD</h1></div>
+    </header>
+</head>
+<body>
+    <section id="add__expense">
+        <div class = "user__panel">
+        <img class="user__img" src ="bg.jpg" alt="bg image">
+        <h1 class="user__name"> Username </h1>
+        <hr>
+        <button onclick="ExpenseDropdown()"class="panel__item first__item"><i class="fas fa-dollar-sign adjust__size"></i>Expenses</button>
+        <div id="dropdown" class="expense__content">
+            <a href="#home">Add expenses</a>
+            <a href="#about">Manage expenses</a>
+        </div>
+        <button onclick="ExpenseReportDropdown()" class="panel__item first__item call__drop"><i class="fas fa-dollar-sign adjust__size"></i>Expense Report</button>
+        <div id="dropdown_er" class="expense_report__content">
+            <a href="#home">Daywise expenses</a>
+            <a href="#about">Monthwise expenses</a>
+        </div>
+        <button class="panel__item first__item"><i class="fas fa-dollar-sign adjust__size"></i>Save Receipts</button>
+        <button class="panel__item first__item call__drop "><i class="fas fa-dollar-sign adjust__size"></i>Scan QRcode</button>
+        <button class="panel__item first__item"><i class='fas fa-home adjust__size'></i>Log out</h1></button>
+        </div>
+    </section>
+    <script src="../Script/add_expense.js"></script>
+
+</body>
+</html>

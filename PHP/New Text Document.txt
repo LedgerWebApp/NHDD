@@ -1,0 +1,119 @@
+<?php
+session_start();
+include_once('pdo1.php');
+$username=($_SESSION['name']);
+  ?>
+
+
+<!doctype html>
+<html>
+
+<head>
+    <title>NHDD | DASHBOARD</title>
+    <link rel="stylesheet" href="../CSS/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div style = "position:relative; left:20px; top:20px;" class="begin">
+            <strong class="logo_name">NHDD</strong>
+        </div><br>
+        <br>
+    </header>
+    <div class="first">
+        <br><br>
+        <h2 align="center"><?php echo $_SESSION['name'] ?></h2>
+        <hr>
+        <ul style="list-style: none;" class="ho">
+
+            <li>
+                <h3 > <em class="fa fa-dashboard">&nbsp;</em>Dashboard</h3></li>
+                <li ">
+                     <button style = "position:relative; left:0px; top:-0px;"type="button" class="collapsible"><h3><em class="fa fa-navicon">&nbsp;</em>Expenses</h3> </button> 
+                    
+            <div class="content">
+                <p style="text-decoration: none; font-size:120%"><a style="text-decoration: none;"  href="add_expenses.PHP">Add Expenses</a></p>
+                
+                <p style="text-decoration: none; font-size:120%"><a style="text-decoration: none;"  href="expense_viewing.PHP">Manage Expenses</a></p>
+                
+            </div></li>
+                    <li>
+                         <button style = "position:relative; left:0px; top:0px;"type="button" class="collapsible"><h3><em class="fa fa-navicon">&nbsp;</em>Expenses Report </h3></button>
+                    
+                        <div class="content">
+                            <p style="text-decoration: none;font-size:120% "><a style="text-decoration: none;"  href="#">Daywise Expenses</a></p>
+                            
+                            <p style="font-size:120%"><a style="text-decoration: none;" href="#">Monthwise Expenses</a></p>
+                            
+                        </div></li>
+                        <li><i class="fa fa-power-off" aria-hidden="true"></i>
+                            <h3 style = "position:relative; left:38px; top:-39px;">Logout</h3></li>
+            </ul>
+        </div>
+    
+    <div style = "position:relative; left:320px; top:-714px;"class="second">
+        <h2 align="center">Expense Report</h2>
+        <div class="table">
+            <h3 align="center">Daily Expenses</h3>
+            <table class="border">
+              <thead>
+                <tr>
+                    <th>S.NO.</th>
+                  <th>Expense Item</th>
+                  <th>Expense Cost</th>
+                  <th>Expense Date</th>
+                </tr>
+              </thead>
+              <?php 
+             
+              $type = $_POST['date1];
+	      $type2 = $_POST['date2'];
+              $dataviewing=new Database_Connection();
+                $sql = $dataviewing->date_viewing($type1,$type2,$username); 
+                $count=1;
+		$totalcost=0;
+                while ($row=mysqli_fetch_array($sql)) {
+
+                    ?>
+                                  <tbody>
+                                    <tr>
+                                      <td><?php echo $count;?></td>
+                                  
+                                      <td><?php  echo $row['name'];?></td>
+                                      <td><?php  echo $row['cost'];?></td>
+                                      <td><?php  echo $row['date'];?></td>
+                                
+                                    </tr>
+                                    <?php 
+			$totalcost=$totalcost+$row['cost'];
+                    $count=$count+1;
+                    }?>
+                                   
+                                  </tbody>
+                                </table>
+<h3> <?php echo $totalcost ?></h3>
+                              </div>
+
+    
+
+</div>
+    </body>
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+              content.style.display = "none";
+            } else {
+              content.style.display = "block";
+            }
+          });
+        }
+    </script>
+    </html>

@@ -1,0 +1,89 @@
+.add__reciepts{
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+form{
+  margin-top:2%;
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+.add__reciepts h1 {
+  font-size:40px;
+  font-weight: 100;
+  color:white;
+  margin-left:30px;
+  font-family: "montserrat";
+  line-height: 40px;
+}
+.add__reciepts h2{
+  font-size:30px;
+  font-weight: 100;
+  margin-top: 4%;
+  text-align: center;
+  margin-left: 30px;
+  color:white;
+  font-family: "montserrat";
+
+}
+.add__reciepts input {
+  width:50%;
+  margin-top: 1%;
+  height: 7vh;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  margin-left: 0;
+}
+.first {
+  margin-top: 9%;
+}
+.file__upload {
+  height: 10vh;
+  width: 60%;
+}
+input[type=file]{
+  background: transparent;
+  box-shadow: none;
+}
+input[type=submit]{
+  width: 20%;
+  height: 5.5vh;
+}
+input[type=text]::placeholder,input[type=date]::placeholder{
+  color:#bdb7b7;
+}
+textarea{
+  padding-left: 10px;
+}
+textarea::placeholder{
+  color: #bdb7b7;
+}
+.add__it {
+  margin-left: 0;
+  margin-top: 1%;
+  cursor: pointer;
+  background-color: white;
+  color: blue;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+.add__it:hover{
+  background-color: blue;
+  color: white;
+}
+.add__reciepts textarea {
+  font-size: 20px;
+  font-family: "montserrat";
+  border-radius: 25px;
+}
+.add__reciepts textarea::placeholder{
+  padding-left:20px ;
+  font-family: "montserrat";
+}
+.sel__img{
+  font-size:15px;
+  color: white;
+  font-family: "montserrat";
+}

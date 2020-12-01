@@ -1,0 +1,188 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "poppins";
+  background-color: blueviolet;
+}
+.nhdd_logo{
+  height: 40px;
+  width: 40px;
+  margin-left: 48%;
+  padding-top: 20px;
+}
+.login__holder {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.login__container {
+  margin-top: 2%;
+  display: flex;
+  flex-direction: row;
+  width: 60%;
+}
+.login__container a{
+  text-decoration: none;
+}
+.bg__img{
+  height: 400px;
+  width: 400px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+.login__field {
+  width: 50%;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-color: #61614b;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+form {
+  width: 100%;
+  height: 100%;
+  /* border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px; */
+  /* background-color: #61614b; */
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
+}
+.login__name {
+  font-size: 25px;
+  color: white;
+  margin-top: 5%;
+}
+.user__field {
+  margin-top: 10%;
+}
+.user__field_signup {
+  margin-top: 10%;
+}
+.user__img {
+  margin-top: 5%;
+  height:80px;
+  width: 80px;
+  border-radius: 50%;
+}
+input {
+  width: 70%;
+  height: 5vh;
+  margin-top: 5%;
+  border: none;
+  border-radius: 30px;
+  padding-left: 10px;
+  font-family: "montserrat";
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+input::placeholder {
+  font-family: "poppins";
+  font-size: 15px;
+}
+.BUTTON_KMY {
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  margin-top: 5%;
+  background:#8A2BE1;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  color: #FFFFFF;
+  font-size: 20px;
+  font-weight: 100;
+  padding: 3px 50px;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+  font-family: "poppins";
+  display: block;
+}
+
+.BUTTON_KMY:hover {
+  background: #1E62D0;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  text-decoration: none;
+}
+@media only screen and (max-width: 600px){
+  .BUTTON_KMY {
+    font-size: 15px;
+    padding: 3px 30px;
+  }
+  .bg__img{
+    display: none;
+  }
+  .login__field{
+    height: 55vh;
+    width: 90%;
+    border-radius: 20px;
+  }
+}
+.login_btn {
+  margin-top: 20%;
+}
+.signup_btn{
+  margin-top:5%;
+}
+
+.loader__bg {
+  position: fixed;
+  z-index: 99999;
+  background-color: #ffff;
+  width: 100%;
+  height: 100%;
+}
+.loader{
+  border :0 solid transparent;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  top: 35%;
+  left: 40%;
+  position: absolute;
+  top:calc(50vh-75px);
+  left:calc(50vw-75px);
+}
+.loader:before ,.loader:after {
+  content:"";
+  border:1em solid blue;
+  border-radius: 50%;
+  width: inherit;
+  height: inherit;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: loader 2s linear infinite;
+  opacity: 0;
+}
+.loader:before {
+  animation-delay: .5s;
+}
+
+@keyframes loader {
+  0%
+  {
+    transform:scale(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+
+  }
+}
+

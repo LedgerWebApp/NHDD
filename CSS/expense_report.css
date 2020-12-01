@@ -1,0 +1,13 @@
+.expense__report__table th {
+    background-color:greenyellow;
+    color: white;
+    font-family: "poppins";
+    font-size: 20px;
+    border: none;
+}
+.expense__report__table {
+    width: 80%;
+}
+.user__inputarea {
+    align-items: center;
+}
