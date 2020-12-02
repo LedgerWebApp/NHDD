@@ -31,7 +31,7 @@ Accompained with
  
 
 ## Inference out of credit score : 
-less than 32 - fall more than 75%
+### less than 32 - fall more than 75%
 
 ### 32 - 35.5 - fall of almost 75%
 
