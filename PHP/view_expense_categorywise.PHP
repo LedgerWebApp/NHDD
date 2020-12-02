@@ -1,7 +1,7 @@
 <?php
 session_start();
-include_once('pdo1.php');
-$userid=($_SESSION['name']);
+include_once('pdo1.php');// it uses the pdo1.php file into it
+$userid=($_SESSION['name']);// it save the name of the username
   ?>
 
 
@@ -72,8 +72,9 @@ $userid=($_SESSION['name']);
             $username = $_SESSION['name'];
             $type = 'daily';
             $dataviewing=new Database_Connection();
-              $sql = $dataviewing->viewing($username,$type);
+              $sql = $dataviewing->viewing($username,$type);//it basically send the value to the function viewing 
               $count=1;
+                // this will continue till it have any row where there is any expenses and delete function take you to the delete.php file with Regdate to it so that it can be deleted
               while ($row=mysqli_fetch_array($sql)) {
                   ?>
                   <tbody>
@@ -150,6 +151,7 @@ $userid=($_SESSION['name']);
                       <td><?php  echo $row['name'];?></td>
                       <td><?php  echo $row['cost'];?></td>
                       <td><?php  echo $row['date'];?></td>
+                            
                       <td> <?php echo "<a href='delete.php?a=".$row['RegDate']."'>Delete</a>"; ?></td>
                     </tr>
                     <?php
