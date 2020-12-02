@@ -11,17 +11,6 @@ each day we buy some fruits , vegetables(daily needs) etc or when our accessorie
 
 Generally all those task proves to be hectic as one has to analyze/make arithmetic assumptions on those records which mainly proves to be a hectic task
 
-Also for managing records one needs to hold it on a notebook and a pen which drives over it and buying this too add up a considerable expense .Also for analyzing records it takes a considerable amount of time and human effort. Also human efforts are prone to calculation mistakes.   
-
-Challenges our solution has deal with: 
-
-Maintaining records .
-Analyse the records .
-Update records .
-extra cost of buying a notebook and a pen.
-Calculation mistakes.
-Time saving.
-
 # Solution :
 
 ![Screenshot](UI.png)
