@@ -1,7 +1,7 @@
 <?php
-session_start();
-include_once('pdo1.php');
-$dataviewing=new Database_Connection2();
+session_start();// it basically start the server
+include_once('pdo1.php'); // it include the pdo1.php where all the function are available
+$dataviewing=new Database_Connection2();// it make a new class of dataviewing
   ?>
 
 <!DOCTYPE html>
@@ -54,10 +54,10 @@ $dataviewing=new Database_Connection2();
            <?php
            $type = ($_POST['datesheet']);
 		$name=($_SESSION['name']);
-           $sql = $dataviewing->downloading($type,$name);
+           $sql = $dataviewing->downloading($type,$name);// it call the function of pdo1.php downloading
            ?>
+                  // it checks whether rows are greater than zero or not
 	<?php if($sql->num_rows > 0){ ?>
-
         <?php while($row = $sql->fetch_assoc()){ ?>
         <img width="50%"src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['image']); ?>" /><br>
         <?php } ?>
