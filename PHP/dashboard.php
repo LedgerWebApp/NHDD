@@ -22,7 +22,7 @@ for ($i = 0; $i <= 6; $i++)
 }
 $dataviewing=new Database_Connection();
 $totalcost=array(0,0,0,0,0,0);
-for($i=1;$i<=6;$i++)
+for($i=0;$i<=6;$i++)
 {
   $sql = $dataviewing->dateviewing('Occasional',$startmonths[$i],$endmonths[$i], $name );
 $totalcost[$i]=0;
