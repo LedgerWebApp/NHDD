@@ -58,4 +58,30 @@ Will provide some daily tips on money saving.
 
 A light and happy interface that will include some quotes and inspiration on money saving.  
 
+## Inference out of credit score : 
+less than 32 - fall more than 75%
+
+32 - 35.5 - fall of almost 75%
+
+37 - 40 - fall of almost 50%
+
+41 - 44 - fall of almost 25%
+
+45 - 48 - fall is about 10%
+
+50 - no change (almost constant with average)
+
+52 - 55 - growth of almost 25% 
+
+56.5 - 60 - growth of almost 50%
+
+61 - 64.5 - growth of almost 75%
+
+65.5 - 70 - almost doubled the current status
+
+70 - 74 - almost 3x growth
+
+75 - very high growth
+
+
 [![Netlify Status](https://api.netlify.com/api/v1/badges/ebaeeba0-f7f4-490c-9644-5854bf1c3e52/deploy-status)](https://app.netlify.com/sites/nhdd-frontend/deploys)
