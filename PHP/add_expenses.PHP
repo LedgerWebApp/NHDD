@@ -2,7 +2,7 @@
 session_start();
 // basically it will include pdo1 file for data connection to the sql server
 include_once('pdo1.php');
-//
+//it make a new class in the database_connection
 $datainsert=new Database_Connection();
 if(isset($_POST['name']) && isset($_POST['type']) && isset($_POST['date']) && isset($_POST['cost']))
 {
