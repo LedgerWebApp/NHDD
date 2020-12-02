@@ -1,23 +1,23 @@
 <?php
 include('pdo1.php');
-session_start();//it basically start the session
-$name=$_SESSION['name'];// it store the username which will show the name of the user
-$t=time();// it basically save the current time
+session_start();
+$name=$_SESSION['name'];
+$t=time();
 
-$p=date("m",$t);// it basically store the month of the current date
+$p=date("m",$t);
 error_reporting(0);
 ?>
 <?php
 for ($i = 0; $i <= 6; $i++)
 {
-   $startmonths[] = date("Y-m-d",strtotime( date( 'Y-m-01' )." -$i months"));// it will store the date starting from nov to past 5 months
+   $startmonths[] = date("Y-m-d",strtotime( date( 'Y-m-01' )." -$i months"));
 }
 for ($i = 0; $i <= 6; $i++)
 {
    $endmonths[] = date("Y-m-d", strtotime( date( 'Y-m-30' )." -$i months"));
 }
 $dataviewing=new Database_Connection();
-$totalcost=array(0,0,0,0,0,0);// it store the occasional cost of the 6 months
+$totalcost=array(0,0,0,0,0,0);
 for($i=0;$i<=6;$i++)
 {
   $sql = $dataviewing->dateviewing('Occasional',$startmonths[$i],$endmonths[$i], $name );
@@ -32,7 +32,7 @@ $totalcost[$i]=0;
 }
 
                     }
-$totalcost1=array(0,0,0,0,0,0);//it save the monthly cost of past 5 months
+$totalcost1=array(0,0,0,0,0,0);
 for($i=0;$i<=6;$i++)
 {
   $sql = $dataviewing->dateviewing('monthly',$startmonths[$i],$endmonths[$i],$name);
@@ -48,7 +48,7 @@ $totalcost1[$i]=0;
 
                     }
 $dataviewing=new Database_Connection();
-$totalcost2=array(0,0,0,0,0,0);// it saves the daily cost of past 5 months
+$totalcost2=array(0,0,0,0,0,0);
 for($i=0;$i<=6;$i++)
 {
   $sql = $dataviewing->dateviewing('daily',$startmonths[$i],$endmonths[$i],$name);
@@ -65,7 +65,7 @@ $totalcost2[$i]=0;
         }
 ?>
 <?php
-$sql = $dataviewing->take($name);// it connects to pdo1.php file and uses the function to show the income and sum of general expenses
+$sql = $dataviewing->take($name);
 while($row = mysqli_fetch_array($sql)){
  ?>
 
@@ -385,13 +385,37 @@ console.log("frac"+frac)
  score = 1-score;
  // to get it as an overall figure with the scale of 100
  score = score*50;
- // it will always remain 25 for those household who income don't vary for vast amount of time
+ score = score.toPrecision(3);
+ console.log(score);
+ var finalScore;
+ if(score === 16.7){
+   finalScore =5;
+ }
+ else if(score === 33.3){
+   finalScore = 45;
+ }
+ else if(score>16.7 && score < 33.3){
+   console.log("yeah")
+   finalScore = 2.41*(score - 16.7)+5;
+ }
+ else if(score > 33.3 && score < 40){
+   score = 0.6*(score - 33.3)+40;
+ }
+ else if(score ===40){
+   finalScore = 49;
+ }
+ else if(score > 40){
+   finalScore = 50;
+ }
+ else{
+   finalScore = 0.3*score;
+ }
+  // it will always remain 25 for those household who income don't vary for vast amount of time
 var incscore = 25;
-score = incscore+score;
-score = score.toPrecision(5);
-//displaying credit score
+finalScore = incscore+ finalScore;
   let credit_set = document.getElementById('credit__score');
-  credit_set.innerHTML = score;
+  finalScore = finalScore.toPrecision(5);
+  credit_set.innerHTML = finalScore;
   //to display notif dot over alert bell on the last date of month
   let todayDate = new Date();
   let currenMonth = todayDate.getMonth();
