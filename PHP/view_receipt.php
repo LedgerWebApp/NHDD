@@ -1,6 +1,6 @@
 <?php
-session_start();
-include_once('pdo1.php');
+session_start();// it start the session after log in
+include_once('pdo1.php');// it includes the pdo1.php file so that you can use the function inside it
 $username=($_SESSION['name']);
   ?>
 
@@ -62,8 +62,9 @@ $username=($_SESSION['name']);
 
               <?php
               $dataviewing=new Database_Connection();
-                $sql = $dataviewing->viewing1($username);
+                $sql = $dataviewing->viewing1($username);// it basically uses viewing1 function of pdo1 file
                     ?>
+                   // it checks whether there is any row or not
 	<?php if($sql->num_rows > 0){ ?>
 
         <?php while($row = $sql->fetch_assoc()){ ?>
