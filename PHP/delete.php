@@ -1,5 +1,5 @@
 <?php
-$user=$_GET['a'];
+$user=$_GET['a']; // it save the regdate which is passed when delete button is clicked
 define('server','localhost:3307');// defining hostname
 define('username','root'); // defining username
 define('password' ,''); // defining Password
@@ -10,10 +10,10 @@ if (!$connection) {
 }
 
 
-$sql = "DELETE FROM expenses WHERE RegDate = '$user'";
+$sql = "DELETE FROM expenses WHERE RegDate = '$user'";//the sql command uses to delete row from expenses where the regdate matches
 
 if (mysqli_query($connection, $sql)) {
-    mysqli_close($connection);
+    mysqli_close($connection);// it close the connection and move to the expense page
     header('Location: view_expense_categorywise.php');
     exit;
 } else {
