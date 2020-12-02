@@ -28,60 +28,33 @@ Time saving.
 Accompained with 
 ![Dashboard](Final_1.png)
 
-For tackling the above said challenges we had came up with the webapp named NHDD.com
-
-Which has several features to deal with above said challenges : 
-## Maintaining  records  :
-Through NHDD.com user can save records of past x years . Where x is (Current year - the first year user started using it).
-## Analyzing the records :
-NHDD.com will generate a complete expense report at the end of the month equipped with credit score , performance analysis numbers and certain pie charts and histograms depicting the expense division of current month.
-## Update records :
-NHDD.com enables user to update data of any record .
-extra cost of buying a notebook and a pen : User just has to register at NHDD.com . the registration will be personalized by login credentials . and then user can start maintaining the expense records.
-## Calculation mIstakes :
-Humans are prone to calculation mistakes but here all the arithmetic manipulation will get accomplished by a machine so no chances of calculation mistakes.  
-## Time saving :
-Expense records analysis will be done by the machine for the user.
-
-
-
-
-## Extra features of User accessibility :
  
-Login and sign up facility available.
-
-Multiple users can login simultaneously
-
-A report reminder will be generated monthly.
-
-Will provide some daily tips on money saving.
-
-A light and happy interface that will include some quotes and inspiration on money saving.  
 
 ## Inference out of credit score : 
 less than 32 - fall more than 75%
 
-32 - 35.5 - fall of almost 75%
+### 32 - 35.5 - fall of almost 75%
 
-37 - 40 - fall of almost 50%
+### 37 - 40 - fall of almost 50%
 
-41 - 44 - fall of almost 25%
+### 41 - 44 - fall of almost 25%
 
-45 - 48 - fall is about 10%
+### 45 - 48 - fall is about 10%
 
-50 - no change (almost constant with average)
+### 50 - no change (almost constant with average)
 
-52 - 55 - growth of almost 25% 
+### 52 - 55 - growth of almost 25% 
 
-56.5 - 60 - growth of almost 50%
+### 56.5 - 60 - growth of almost 50%
 
-61 - 64.5 - growth of almost 75%
+### 61 - 64.5 - growth of almost 75%
 
-65.5 - 70 - almost doubled the current status
+### 65.5 - 70 - almost doubled the current status
 
-70 - 74 - almost 3x growth
+### 70 - 74 - almost 3x growth
 
-75 - very high growth
-
+### 75 - very high growth
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/ebaeeba0-f7f4-490c-9644-5854bf1c3e52/deploy-status)](https://app.netlify.com/sites/nhdd-frontend/deploys)
+
+BTW you are thinking where is Oops :confused: it is used in javascript and php codes
