@@ -1,9 +1,9 @@
 <?php
 // Include the database configuration file
  session_start();
-include_once('pdo1.php');
+include_once('pdo1.php');// it consider the pdo1.php in this code also
 
-$datainsert=new Database_Connection2();
+$datainsert=new Database_Connection2();// it makes a new class of database connection
 // If file upload form is submitted
 if(isset($_POST['submit']) && isset($_POST['expense'])){
     if(!empty($_FILES["image"]["name"])) {
@@ -40,7 +40,7 @@ echo "<script>window.location.href='add_receipt.php'</script>";
 echo "<script>window.location.href='add_receipt.php'</script>";
         }
     }else{
-       // Message for unsuccessfull insertionecho
+       // Message for unsuccessfull insertion echo
        echo  '<div style="background-color:red"><h1 style="text-align:center;color:white">Oops!! Try Again</h1></div>';
 echo "<script>window.location.href='add_receipt.php'</script>";
     }
@@ -99,7 +99,7 @@ echo "<script>window.location.href='add_receipt.php'</script>";
             <input type="date" placeholder="Date" name="date"><br >
             <!-- <input type="text" placeholder="Description" /><br /> -->
             <textarea rows="7" cols="32" name="description" placeholder="Add description of receipt"></textarea><br>
-            <label class="sel__img">Select Image File:(only .jpg , .jpeg)</label>
+            <label class="sel__img">Select Image File:(only .jpg ,.png , .jpeg)</label>
              <input type="file" name="image">
             <input class="add__it" type="submit" onclick="showAlert()" name="submit" value="Add it">
             </form>
