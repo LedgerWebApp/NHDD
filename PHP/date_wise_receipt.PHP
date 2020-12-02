@@ -52,7 +52,7 @@ include_once('pdo1.php');
         <div class ="user__inputarea">
          <h1 class="input__head">View Receipt</h1>
          <hr />
-         <div class="handle__form">
+         <div class="handle__form">// after clicking on the submit button the form take us to the view_receipt.php file where all the expenses are shown
         <form method="POST"action="view_receipt.php">
         <input type="date" name="datesheet" id="date">
         <button class="BUTTON_KMY">Submit</button>
