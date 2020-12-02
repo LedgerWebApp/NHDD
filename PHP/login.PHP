@@ -2,8 +2,9 @@
 session_start();
 // basically it will include pdo file for data connection to the sql server
 include_once('pdo1.php');
-//
+// it is used to make a class of database-connection1 name logindata
 $logindata=new Database_Connection1();
+// used to check whether all the field are used or not 
 if(isset($_POST['username']) && isset($_POST['pass']))
 {
 // After clicking on login button Values
