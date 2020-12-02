@@ -27,7 +27,18 @@ Time saving.
 ![Screenshot](UI.png)
 Accompained with 
 ![Dashboard](Final_1.png)
-
+![A](Images/a.png)
+![A](Images/b.png)
+![A](Images/c.png)
+![A](Images/d.png)
+![A](Images/e.png)
+![A](Images/f.png)
+![A](Images/g.png)
+![A](Images/h.png)
+![A](Images/i.png)
+![A](Images/j.png)
+![A](Images/k.png)
+![A](Images/l.png)
  
 
 ## Inference out of credit score : 
