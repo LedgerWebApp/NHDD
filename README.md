@@ -25,6 +25,8 @@ Time saving.
 # Solution :
 
 ![Screenshot](UI.png)
+Accompained with 
+![Dashboard](Final_1.png)
 
 For tackling the above said challenges we had came up with the webapp named NHDD.com
 
