@@ -656,7 +656,7 @@ try {
   let massPopChartarea = new Chart(mypiechart, {
     type: 'pie', //bar, pie, horizontal , line, donuts , radar, polararea
     data: {
-      labels: ['Month-1', 'Month-2', 'Month-3', 'Month-4'],
+      labels:  ['Monthly Expenditure', 'Occasional Expenditure', 'Daily Expenditure'],
       datasets: pieData,
     },
     options: {
