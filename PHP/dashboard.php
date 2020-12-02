@@ -6,9 +6,6 @@ $t=time();
 
 $p=date("m",$t);
 error_reporting(0);
-// $totalcost = array(0,0,0,0,0,0);
-// $totalcost2 = array(0,0,0,0,0,0);
-// $totalcost1=  array(0,0,0,0,0,0);
 ?>
 <?php
 for ($i = 0; $i <= 6; $i++)
@@ -18,7 +15,6 @@ for ($i = 0; $i <= 6; $i++)
 for ($i = 0; $i <= 6; $i++)
 {
    $endmonths[] = date("Y-m-d", strtotime( date( 'Y-m-30' )." -$i months"));
-   //echo $startmonths[$i];
 }
 $dataviewing=new Database_Connection();
 $totalcost=array(0,0,0,0,0,0);
@@ -27,19 +23,14 @@ for($i=0;$i<=6;$i++)
   $sql = $dataviewing->dateviewing('Occasional',$startmonths[$i],$endmonths[$i], $name );
 $totalcost[$i]=0;
                 while ($row=mysqli_fetch_array($sql)) {
-
-              //       echo($row['cost']);
-			 // echo($row['name']);?>
+?>
 
 <?php
-  // occasional monthly data totalcost[1] sum of occasional cost of previous month
+  // totalcost[0] stores sum of occasional expense of current month
+  //simlarly totalcost[1] stores is sum of occasional expense of previous month
   $totalcost[$i]=$totalcost[$i]+$row['cost'];
 }
-//  echo('total');
 
-
-//  echo($totalcost[$i]);
-// echo('<br>');
                     }
 $totalcost1=array(0,0,0,0,0,0);
 for($i=0;$i<=6;$i++)
@@ -47,17 +38,14 @@ for($i=0;$i<=6;$i++)
   $sql = $dataviewing->dateviewing('monthly',$startmonths[$i],$endmonths[$i],$name);
 $totalcost1[$i]=0;
                 while ($row=mysqli_fetch_array($sql)) {
-
-      //                echo($row['cost']);
-			// echo($row['name']);?>
+?>
 
 <?php
-                 // occasional monthly data totalcost[1] sum of daily cost of previous month
+                 // totalcost1[0] stores is sum of monthly expense of current month
+                 //simlarly totalcost1[1] stores is sum of montly expense of previous month
 			              $totalcost1[$i]=$totalcost1[$i]+$row['cost'];
 }
-//  echo('total');
-//  echo($totalcost1[$i]);
-// echo('<br>');
+
                     }
 $dataviewing=new Database_Connection();
 $totalcost2=array(0,0,0,0,0,0);
@@ -67,16 +55,13 @@ for($i=0;$i<=6;$i++)
 $totalcost2[$i]=0;
                 while ($row=mysqli_fetch_array($sql)) {
 
-      //                echo($row['cost']);
-			// echo($row['name']);?>
+                 ?>
 
 <?php
-
+                 // totalcost2[0] stores in sum of daily expense of current month
+                 //simlarly totalcost2[1] stores is sum of daily expense of previous month
 			              $totalcost2[$i]=$totalcost2[$i]+$row['cost'];
 }
-//  echo('total');
-//  echo($totalcost2[$i]);
-// echo('<br>');
         }
 ?>
 <?php
@@ -86,8 +71,6 @@ while($row = mysqli_fetch_array($sql)){
 
 <?php  $expenses= $row['expenses'];
 $income=$row['income'];
-// echo $expenses;
-// echo $income;
 ?>
 <?php }?>
 
@@ -97,7 +80,6 @@ $income=$row['income'];
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="../CSS/report.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
@@ -191,11 +173,10 @@ $income=$row['income'];
     </body>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script type="text/javascript" charset="utf-8">
-
-   // const axios = require('axios')
     setTimeout(function(){
-  $('.loader__bg').fadeToggle();
-},1500);
+    $('.loader__bg').fadeToggle();
+     },1500);
+//dropdown abstract class to maintain the dropdown functionality
 class dropdown{
   constructor(){
     if(this.constructor === dropdown){
@@ -207,6 +188,7 @@ class dropdown{
   }
 
 }
+//subclass of dropdown abstract class which implements the displayDropDown method for dropdown functionality
 class viewExpDropdown extends dropdown{
   displayDropDown(dropdownEle,toggleClass){
   var check = document.getElementById(dropdownEle).classList.toggle(toggleClass);
@@ -217,16 +199,16 @@ class viewExpDropdown extends dropdown{
   dropdown_display.style.display="none";
   }
 }
+//various objects of different dropdown buttons for proper functioning
 var viewObj = new viewExpDropdown()
 var ExpenseObj = new viewExpDropdown()
 var ExpenseReportObj = new viewExpDropdown()
+//calling methods via objects
 function viewingExp(){
-  console.log("dsds")
   viewObj.displayDropDown("dropdown_vr","show");
 }
 function ExpenseDropdown() {
   ExpenseObj.displayDropDown("dropdown","show")
-
 }
 function ExpenseReportDropdown(){
   ExpenseReportObj.displayDropDown("dropdown_er","show");
@@ -253,13 +235,12 @@ function downloadInit() {
   });
 }
 
-
 let fetch_btn = document.getElementById('fetch__btn');
 fetch_btn.addEventListener('click', clickHandler);
 
 var quoteArray = [];
 var author = [];
-
+//handles click on quotes button
 function clickHandler() {
   let query_sign = document.getElementById('dot__dis');
   query_sign.style.display = 'none';
@@ -270,6 +251,7 @@ function clickHandler() {
   } else {
     quote_box.style.display = 'none';
   }
+  //xml request get quotes hosted on github report "RawQuotesData" and display it in random manner
   var xhr = new XMLHttpRequest();
   let obj1 =  xhr.open('GET', 'https://nlok5923.github.io/RawQuotesData/quotes.json', true);
   console.log(obj1+"await")
@@ -288,7 +270,9 @@ function clickHandler() {
   xhr.send();
 }
 var deviation = 0;
+//alert message class which handles the display of alert message based of current day date
  class alertMessage{
+   //constructor which initilizes object with last date of current month
    constructor(month){
      this.month =  month;
      if (
@@ -309,14 +293,15 @@ var deviation = 0;
      this.date = 30;
    }
   }
+  //method to check if date passed is the last date of month or not
    checker(date){
      if(this.date ===date){
        return true;
      }else
      return false;
    }
+   //method to show deviation of currentmonth expenditure it always called after checker() method returns true to the call
    showMessage(deviation){
-    // console.log("sdsd")
     console.log(deviation)
     deviation = deviation.toPrecision(5);
       let alert_msg = document.getElementById('alert_msg');
@@ -341,6 +326,7 @@ var deviation = 0;
         alert_box.style.display = 'none';
       }
    }
+   //method to display alertbox which proclaims to check the alert at the month end. this method get excecuted when checklater return with false
    checklater(){
     let alt_box = document.getElementById('alt__box');
       let check = document.getElementById('alt__box').classList.toggle('dis');
@@ -351,12 +337,14 @@ var deviation = 0;
    }
    }
  }
+ //this function get called when user click alert button on dashboard
  function alertHandler(){
     let todayDate = new Date();
-    console.log("sd")
-
+    //get current month
     let currenMonth = todayDate.getMonth();
+    // init obj with current month and last date of current month
     let alertObj = new  alertMessage(currenMonth);
+                      // passes todays date to check the if today is the end day of the month/
     if(alertObj.checker(todayDate.getDate())){
       alertObj.showMessage(deviation);
     }
@@ -364,57 +352,47 @@ var deviation = 0;
       alertObj.checklater();
     }
   }
+  //function executes when window onload to display figure like bar,line,pie chart etc
   window.onload = function () {
-  console.log(<?php echo json_encode($totalcost); ?>)
-  console.log(<?php echo json_encode($totalcost1); ?>)
-  console.log(<?php echo json_encode($totalcost2); ?>)
-   montharray = <?php echo json_encode($totalcost); ?> ;
-   occArray =  <?php echo json_encode($totalcost1); ?> ;
-   dailyArray = <?php echo json_encode($totalcost2); ?> ;
-  // console.log(montharray)
-  // console.log(occArray)
-  // console.log(dailyArray)
-  //console.log(income+"income")
-  console.log("ma"+montharray);
-  console.log("oa"+occArray);
-  console.log("da"+dailyArray);
+    //copying array
+  occArray = <?php echo json_encode($totalcost); ?> ;
+  montharray =  <?php echo json_encode($totalcost1); ?> ;
+  dailyArray = <?php echo json_encode($totalcost2); ?> ;
+  //Getting users income for proper analysis
 var income =  Number(<?php echo $income; ?>)
-console.log("incomenhai"+income)
 for(let i=0;i<6;i++){
     finalArray.push(montharray[i]+occArray[i]+dailyArray[i])
     savingArray.push(income-(montharray[i]+occArray[i]+dailyArray[i]))
     prevAvg = prevAvg + montharray[i]+occArray[i]+dailyArray[i];
 }
 var pieSec1,pieSec2,pieSec3;
+//total contains expenditure of current month
 var total = montharray[0] + occArray[0] + dailyArray[0]
+//different sections of pie chart
 pieSec1 = (montharray[0]/total);
 pieSec2 = (occArray[0]/total);
 pieSec3 = (dailyArray[0]/total);
+//calculating expenditure deviation figure which get displayed in the alert message
 deviation = total/(prevAvg+total);
-// console.log("prev"+prevAvg+"total"+total)
-// console.log("deviation"+deviation);
 deviation = deviation*100;
-//console.log("deviation"+deviation);
-//console.log(prevAvg)
 prevAvg = prevAvg/6;
 currMonth = montharray[0] + occArray[0] + dailyArray[0]
 console.log(currMonth)
+//calculating credit score
 var frac = currMonth/(currMonth+prevAvg)
 console.log("frac"+frac)
  score = frac
- console.log(score)
  score = 1-score;
- console.log(score)
+ // to get it as an overall figure with the scale of 100
  score = score*50;
- console.log(score)
-var incscore = 25;// it will always remain 25 for those household who income don't vary for vast amount of time
-console.log("credit_score"+score)
-console.log(score)
+ // it will always remain 25 for those household who income don't vary for vast amount of time
+var incscore = 25;
+score = incscore+score;
 score = score.toPrecision(5);
+//displaying credit score
   let credit_set = document.getElementById('credit__score');
   credit_set.innerHTML = score;
-  // console.log("hello")
-  //to display notif dot over alert bell
+  //to display notif dot over alert bell on the last date of month
   let todayDate = new Date();
   let currenMonth = todayDate.getMonth();
   if (
@@ -441,8 +419,7 @@ score = score.toPrecision(5);
       dot__bell.style.display = 'block';
     }
   }
-  // let alert__btn = document.getElementById('alert__btn');
-  // alert__btn.addEventListener('click', alertHandler);
+  //handling title configuration for different charts
   function titleConfig(text, dis, size, color, font) {
   this.text = text;
   this.display = dis;
@@ -450,6 +427,7 @@ score = score.toPrecision(5);
   this.fontColor = color;
   this.fontFamily = font;
 }
+ //handling tick configuration for different charts
 function tickConfig(stepSize, size, font, begin, color) {
   this.stepSize = stepSize;
   this.fontSize = size;
@@ -457,10 +435,9 @@ function tickConfig(stepSize, size, font, begin, color) {
   this.fontFamily = font;
   this.fontColor = color;
 }
-// $(document).ready(function displayGraph(){
-
 let mychart = document.getElementById('myChart').getContext('2d');
-
+// handling the configuration for display of data in different graphs
+//parent function
 function dataConfig(
   borderColor,
   borderWidth,
@@ -478,6 +455,8 @@ function dataConfig(
   this.fontColor = fontColor;
   this.label = label;
 }
+//bar dataConfing inheriting dataConfing function for getting proper data configuration for displaying bar graph
+//child function
 function barDataConfig(
   borderColor,
   borderWidth,
@@ -487,6 +466,7 @@ function barDataConfig(
   fontColor,
   label
 ) {
+  //calling parent function
   dataConfig.call(
     this,
     borderColor,
@@ -507,6 +487,8 @@ function barDataConfig(
     '#01c5c4',
   ];
 }
+//pieDataConfing inheriting dataConfing function for getting proper data configuration for displaying pie chart
+//child function
 function pieDataConfig(
   borderColor,
   borderWidth,
@@ -516,6 +498,7 @@ function pieDataConfig(
   fontColor,
   label
 ) {
+  //calling the parent function
   dataConfig.call(
     this,
     borderColor,
@@ -529,7 +512,8 @@ function pieDataConfig(
   this.data = [pieSec1,pieSec2,pieSec3];
   this.backgroundColor = ['#feca57', '#ff6b6b', '#48dbfb',];
 }
-
+//lineDataConfing inheriting dataConfing function for getting proper data configuration for displaying line graph
+//child function
 function lineDataConfig(
   borderColor,
   borderWidth,
@@ -539,6 +523,7 @@ function lineDataConfig(
   fontColor,
   label
 ) {
+  //parent function
   dataConfig.call(
     this,
     borderColor,
@@ -555,7 +540,8 @@ function lineDataConfig(
   this.pointHoverBackgroundColor = '#55bae7';
   this.pointHoverBorderColor = '#55bae7';
 }
-
+//setting configuration for different charts and graph by making there objects
+//setting linegraph config object
 let lineDataConfiguration = new lineDataConfig(
   'grey',
   5,
@@ -565,6 +551,7 @@ let lineDataConfiguration = new lineDataConfig(
   'white',
   'Expenditure'
 );
+//making an object array of object lineDataConfiguration to pass it as a dataset
 let lineData = [lineDataConfiguration];
 let pieDataConfiguration = new pieDataConfig(
   'white',
@@ -575,8 +562,9 @@ let pieDataConfiguration = new pieDataConfig(
   'white',
   'Expenditure'
 );
+//making an object array of object pieDataConfiguration to pass it as a dataset
+//doing similarly for bar chart data
 let pieData = [pieDataConfiguration];
-
 let barData = new barDataConfig(
   'grey',
   1,
@@ -590,6 +578,8 @@ let barNew = [barData];
 console.log(barNew);
 
 try {
+  //main object of function chart which is responsible for setting all configuration of bar graph and displaying it. it inculcates user of all
+  //inherting functions showned above by making there objects
   let massPopChart = new Chart(mychart, {
     type: 'bar', //bar, pie, horizontal , line, donuts , radar, polararea
     data: {
@@ -650,13 +640,14 @@ try {
   console.log(`Wrong configuration detected ${err}`);
   alert(`Something wrong happended ${err}`);
 }
-
+  //main object of function chart which is responsible for setting all configuration of pie chart and displaying it. it inculcates use of all
+  //inheriting/non inheriting functions showned above by making there objects
 try {
   let mypiechart = document.getElementById('mypiechart').getContext('2d');
   let massPopChartarea = new Chart(mypiechart, {
     type: 'pie', //bar, pie, horizontal , line, donuts , radar, polararea
     data: {
-      labels:  ['Monthly Expenditure', 'Occasional Expenditure', 'Daily Expenditure'],
+      labels: ['Monthly Expenditure', 'Occasional Expenditure', 'Daily Expenditure'],
       datasets: pieData,
     },
     options: {
@@ -688,7 +679,8 @@ try {
   console.log(`Wrong configuration detected ${err}`);
   alert(`Something wrong happended ${err}`);
 }
-
+ //main object of function chart which is responsible for setting all configuration of line graph and displaying it. it inculcates use of all
+  //inheriting/non inheriting functions showned above by making there objects
 try {
   let mylinechart = document.getElementById('mylinechart').getContext('2d');
   let massPopChartarealine = new Chart(mylinechart, {
@@ -751,8 +743,6 @@ try {
   console.log(`Wrong configuration detected ${err}`);
   alert(`Something wrong happended ${err}`);
 }
-console.log("hey");
-//});
 };
 </script>
 </html>
