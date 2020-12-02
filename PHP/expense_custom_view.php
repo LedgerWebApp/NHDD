@@ -1,6 +1,6 @@
 <?php
-session_start();
-include_once('pdo1.php');
+session_start();// it basically starts the session so that previous data can be used
+include_once('pdo1.php'); // it uses pdo1 file so that it's function can be utilised
 $username=($_SESSION['name']);
   ?>
 
@@ -66,11 +66,11 @@ $username=($_SESSION['name']);
               <?php
              $ending = ($_POST['lastdate']);
               $type = ($_POST['datesheet']);
-              $dataviewing=new Database_Connection();
-                $sql = $dataviewing->dataviewing($type,$ending,$username);
+              $dataviewing=new Database_Connection();// it make a new class
+                $sql = $dataviewing->dataviewing($type,$ending,$username);// it basically call the dataviewing function of the pdo1 file
                 $count=1;
 		            $totalcost=0;
-                while ($row=mysqli_fetch_array($sql)) {
+                while ($row=mysqli_fetch_array($sql)) {// it continue till the last row is fetched (mysqli_fetch_array)
 
                     ?>
                                   <tbody>
