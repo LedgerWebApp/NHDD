@@ -1,23 +1,23 @@
 <?php
 include('pdo1.php');
-session_start();
-$name=$_SESSION['name'];
-$t=time();
+session_start();//it basically start the session
+$name=$_SESSION['name'];// it store the username which will show the name of the user
+$t=time();// it basically save the current time
 
-$p=date("m",$t);
+$p=date("m",$t);// it basically store the month of the current date
 error_reporting(0);
 ?>
 <?php
 for ($i = 0; $i <= 6; $i++)
 {
-   $startmonths[] = date("Y-m-d",strtotime( date( 'Y-m-01' )." -$i months"));
+   $startmonths[] = date("Y-m-d",strtotime( date( 'Y-m-01' )." -$i months"));// it will store the date starting from nov to past 5 months
 }
 for ($i = 0; $i <= 6; $i++)
 {
    $endmonths[] = date("Y-m-d", strtotime( date( 'Y-m-30' )." -$i months"));
 }
 $dataviewing=new Database_Connection();
-$totalcost=array(0,0,0,0,0,0);
+$totalcost=array(0,0,0,0,0,0);// it store the occasional cost of the 6 months
 for($i=0;$i<=6;$i++)
 {
   $sql = $dataviewing->dateviewing('Occasional',$startmonths[$i],$endmonths[$i], $name );
@@ -32,7 +32,7 @@ $totalcost[$i]=0;
 }
 
                     }
-$totalcost1=array(0,0,0,0,0,0);
+$totalcost1=array(0,0,0,0,0,0);//it save the monthly cost of past 5 months
 for($i=0;$i<=6;$i++)
 {
   $sql = $dataviewing->dateviewing('monthly',$startmonths[$i],$endmonths[$i],$name);
@@ -48,7 +48,7 @@ $totalcost1[$i]=0;
 
                     }
 $dataviewing=new Database_Connection();
-$totalcost2=array(0,0,0,0,0,0);
+$totalcost2=array(0,0,0,0,0,0);// it saves the daily cost of past 5 months
 for($i=0;$i<=6;$i++)
 {
   $sql = $dataviewing->dateviewing('daily',$startmonths[$i],$endmonths[$i],$name);
@@ -65,7 +65,7 @@ $totalcost2[$i]=0;
         }
 ?>
 <?php
-$sql = $dataviewing->take($name);
+$sql = $dataviewing->take($name);// it connects to pdo1.php file and uses the function to show the income and sum of general expenses
 while($row = mysqli_fetch_array($sql)){
  ?>
 
