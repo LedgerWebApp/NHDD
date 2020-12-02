@@ -52,6 +52,7 @@ include_once('pdo1.php');
          <h1 class="input__head">RECEIPT VIEW</h1>
          <hr />
          <div class="handle__form">
+             // after clicking on the submit button the form takes to the viewing_exp1.php file where the images of that date are shown
         <form method="POST"action="viewing_exp1.php">
         <input type="date" name="datesheet" id="date">
         <button class="BUTTON_KMY">Submit</button>
