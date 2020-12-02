@@ -1,8 +1,9 @@
 <?php
 // basically it will include pdo file for data connection to the sql server
 include_once('pdo1.php');
-//
+// it make a new class of database_connection1 called signupdata
 $signupdata=new Database_Connection1();
+// it checks whether all field of form are filled or not
 if(isset($_POST['name']) && isset($_POST['username']) && isset($_POST['email']) && isset($_POST['psw']))
 {
 // Posted Values
