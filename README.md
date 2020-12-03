@@ -28,6 +28,9 @@ Accompained with
 ![A](Images/j.png)
 ![A](Images/k.png)
 ![A](Images/l.png)
+
+## Demonstration:
+![gif](record_000041.gif)
  
 
 ## Inference out of credit score : 
