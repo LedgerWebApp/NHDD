@@ -60,4 +60,3 @@ Accompained with
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/ebaeeba0-f7f4-490c-9644-5854bf1c3e52/deploy-status)](https://app.netlify.com/sites/nhdd-frontend/deploys)
 
-BTW you are thinking where is Oops :confused: it is used in javascript and php codes
