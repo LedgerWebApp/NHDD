@@ -372,10 +372,10 @@ var total = montharray[0] + occArray[0] + dailyArray[0]
 pieSec1 = (montharray[0]/total);
 pieSec2 = (occArray[0]/total);
 pieSec3 = (dailyArray[0]/total);
+prevAvg = prevAvg/6;
 //calculating expenditure deviation figure which get displayed in the alert message
 deviation = total/(prevAvg+total);
 deviation = deviation*100;
-prevAvg = prevAvg/6;
 currMonth = montharray[0] + occArray[0] + dailyArray[0]
 console.log(currMonth)
 //calculating credit score
